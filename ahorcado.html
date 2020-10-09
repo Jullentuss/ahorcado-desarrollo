@@ -14,11 +14,11 @@
   </div>
   <div>
     <div class="contenedorEmojis">
-      <p class="emoji">&#128512;</p>
-      <p class="emoji">&#128522;</p>
-      <p class="emoji">&#128528;</p>
-      <p class="emoji">&#128531;</p>
-      <p class="emoji">&#128128;</p>
+      <p class="emoji" id="emoji1">&#128512;</p>
+      <p class="emoji" id="emoji2">&#128522;</p>
+      <p class="emoji" id="emoji3">&#128528;</p>
+      <p class="emoji" id="emoji4">&#128531;</p>
+      <p class="emoji" id="emoji5">&#128128;</p>
     </div>
   </div>
   <div class="contenedorPadreLetras">
@@ -58,8 +58,17 @@
     </div>
   </div>
   <div class="contenedorReiniciar">
-    <input type="buttom" value="REINICIAR" class="botonReiniciar">
+    <input type="buttom" value="REINICIAR" class="botonReiniciar" id="btnReiniciar">
   </div>
+  <script type="text/javascript">
+    function cargaInicial(){
+      document.getElementById("emoji4").style.display="none";
+      document.getElementById("emoji2").style.display="none";
+      document.getElementById("emoji3").style.display="none";
+      document.getElementById("emoji5").style.display="none";
+      document.getElementById("btnReiniciar").disabled=true;
+    }
+  </script>
   <style>
     .contenedorReiniciar {
       height: auto;

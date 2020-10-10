@@ -19,6 +19,17 @@
         <p id="4" class="emoji">&#128531;</p>
         <p id="5" class="emoji">&#128128;</p>
       </div>
+      <div class="contenedorLetrasDesconocidas">
+      	<h1 id="l1" class="letraDesconocida"> _ </h1>
+      	<h1 id="l2" class="letraDesconocida"> _ </h1>
+      	<h1 id="l3" class="letraDesconocida"> _ </h1>
+      	<h1 id="l4" class="letraDesconocida"> _ </h1>
+      	<h1 id="l5" class="letraDesconocida"> _ </h1>
+      	<h1 id="l6" class="letraDesconocida"> _ </h1>
+      	<h1 id="l7" class="letraDesconocida"> _ </h1>
+      	<h1 id="l8" class="letraDesconocida"> _ </h1>
+      </div>
+
     </div>
     <div class="contenedorPadreLetras">
       <div class="contenedorFilaLetras">
@@ -206,6 +217,22 @@
         text-align: center;
         margin-top: 20px;
       }
+      .letraDesconocida{
+      	float: left;
+      	margin: 5px;
+      	color: white; 
+      }
+      .contenedorLetrasDesconocidas{
+      	border: 2px solid;
+        height: auto;
+        width: 220px;
+        overflow: auto;
+        margin: auto;
+        padding-bottom: 5px;
+        margin-top: 20px;
+        text-align: center;
+
+      }
 
       .botonReiniciar {
         width: 350px;
@@ -280,6 +307,10 @@
       }
     </style>
     <script type="text/javascript">
+      var palabraDesconocida= "T E L E F O N O"; 
+      console.log(palabraDesconocida);
+      var arregloPalabra= palabraDesconocida.split(" ");
+      console.log(arregloPalabra);	
       function carga_iniciar() {
         document.getElementById("2").style.display = "none";
         document.getElementById("3").style.display = "none";
@@ -289,8 +320,20 @@
       }
 
       function validarLetra(l) {
-        console.log(l.value);
+      	if(palabraDesconocida.includes(l.value)){
+      		console.log("Si");
+      		for(var x=0; x<arregloPalabra.length; x++){
+      			console.log(arregloPalabra[x]);
+      			var letraX = arregloPalabra[x];
+      			if(l.value==letraX){
+      				document.getElementById("l"+ (x+1)).innerText=letraX;
+
+      			}
+      		}	
+      	}
+        console.log(l.value+"prueba");
         l.style.display = "none";
+
       }
     </script>
   </body>

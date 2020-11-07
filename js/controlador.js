@@ -21,13 +21,19 @@ function cargarPelicula(nombre){
 		type: 'GET',
 		success: (respuesta) => {
 			console.log(respuesta);
+			mostrarPelicula(respuesta.Search);
 		},
 		error: (respuestaError) => {
 			console.log(respuestaError);
 		}
 	})
 }
-
+function mostrarPelicula(listado){
+console.log(listado);
+for(var peliculaListado of listado){
+	console.log(peliculaListado)
+}
+}
 /*const funcionInicial = () =>{
     console.log("Hola¡");
 }*/

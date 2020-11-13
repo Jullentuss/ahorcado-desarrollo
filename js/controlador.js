@@ -29,10 +29,19 @@ function cargarPelicula(nombre){
 	})
 }
 function mostrarPelicula(listado){
-console.log(listado);
-for(var peliculaListado of listado){
-	console.log(peliculaListado)
-}
+	console.log(listado);
+	var contenedor = document.getElementById('divPeliculas');
+	contenedor.innerHTML = "";
+	for(var peliculaListado of listado){
+		console.log(peliculaListado);
+		var contenedorHijo1 = document.createElement("div");
+		contenedorHijo1.className = 'col-md-4';
+		var tituloHijo1 = document.createElement("h4");
+		tituloHijo1.innerHTML = peliculaListado.Title;
+		contenedor.appendChild(contenedorHijo1);
+		contenedorHijo1.appendChild(tituloHijo1);
+
+	}
 }
 /*const funcionInicial = () =>{
     console.log("Hola¡");
